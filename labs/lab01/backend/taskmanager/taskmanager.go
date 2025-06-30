@@ -5,10 +5,15 @@ import (
 	"time"
 )
 
+// Predefined errors
 var (
 	ErrTaskNotFound = errors.New("task not found")
+<<<<<<< HEAD
 	ErrEmptyTitle   = errors.New("task title cannot be empty")
 	ErrInvalidID    = errors.New("invalid task ID")
+=======
+	ErrEmptyTitle   = errors.New("title cannot be empty")
+>>>>>>> e6d76f7 (update lab1 and workflow of submission)
 )
 
 type Task struct {
@@ -19,11 +24,12 @@ type Task struct {
 	CreatedAt   time.Time
 }
 type TaskManager struct {
-	tasks  map[int]*Task
+	tasks  map[int]Task
 	nextID int
 }
 
 func NewTaskManager() *TaskManager {
+<<<<<<< HEAD
 	return &TaskManager{
 		tasks:  make(map[int]*Task),
 		nextID: 1,
@@ -92,4 +98,38 @@ func (tm *TaskManager) ListTasks(filterDone *bool) []*Task {
 		}
 	}
 	return result
+=======
+	// TODO: Implement this function
+	return nil
+}
+
+// AddTask adds a new task to the manager, returns an error if the title is empty, and increments the nextID
+func (tm *TaskManager) AddTask(title, description string) (Task, error) {
+	// TODO: Implement this function
+	return Task{}, nil
+}
+
+// UpdateTask updates an existing task, returns an error if the title is empty or the task is not found
+func (tm *TaskManager) UpdateTask(id int, title, description string, done bool) error {
+	// TODO: Implement this function
+	return nil
+}
+
+// DeleteTask removes a task from the manager, returns an error if the task is not found
+func (tm *TaskManager) DeleteTask(id int) error {
+	// TODO: Implement this function
+	return nil
+}
+
+// GetTask retrieves a task by ID, returns an error if the task is not found
+func (tm *TaskManager) GetTask(id int) (Task, error) {
+	// TODO: Implement this function
+	return Task{}, nil
+}
+
+// ListTasks returns all tasks, optionally filtered by done status, returns an empty slice if no tasks are found
+func (tm *TaskManager) ListTasks(filterDone *bool) []Task {
+	// TODO: Implement this function
+	return nil
+>>>>>>> e6d76f7 (update lab1 and workflow of submission)
 }

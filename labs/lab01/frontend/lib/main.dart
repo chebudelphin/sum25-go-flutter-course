@@ -26,6 +26,7 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+<<<<<<< HEAD
     return Scaffold(
       appBar: AppBar(title: const Text('Lab 01 Demo')),
       body: SingleChildScrollView(
@@ -49,6 +50,33 @@ class MyHomePage extends StatelessWidget {
             ),
             const SizedBox(height: 24),
             const RegistrationForm(),
+=======
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+          title: const Text('Lab 01 Demo'),
+          bottom: const TabBar(
+            tabs: [
+              Tab(text: 'Profile'),
+              Tab(text: 'Counter'),
+              Tab(text: 'Register'),
+            ],
+          ),
+        ),
+        body: const TabBarView(
+          children: [
+            Center(
+              child: SingleChildScrollView(
+                padding: EdgeInsets.all(16.0),
+                // TODO: change to ProfileCard
+                child: SizedBox.shrink(),
+              ),
+            ),
+            CounterApp(),
+            RegistrationForm(),
+>>>>>>> e6d76f7 (update lab1 and workflow of submission)
           ],
         ),
       ),

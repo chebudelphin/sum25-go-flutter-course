@@ -10,13 +10,28 @@ class CounterApp extends StatefulWidget {
 class _CounterAppState extends State<CounterApp> {
   int _counter = 0;
 
+<<<<<<< HEAD
   void _increment() => setState(() => _counter++);
   void _decrement() => setState(() => _counter--);
   void _reset()     => setState(() => _counter = 0);
+=======
+  void _incrementCounter() {
+    // TODO: Implement this function
+  }
+
+  void _decrementCounter() {
+    // TODO: Implement this function
+  }
+
+  void _resetCounter() {
+    // TODO: Implement this function
+  }
+>>>>>>> e6d76f7 (update lab1 and workflow of submission)
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+<<<<<<< HEAD
       appBar: AppBar(title: const Text('Counter')),
       body: Center(
         child: Column(
@@ -30,6 +45,31 @@ class _CounterAppState extends State<CounterApp> {
                 IconButton(icon: const Icon(Icons.remove),  onPressed: _decrement),
                 IconButton(icon: const Icon(Icons.add),     onPressed: _increment),
                 IconButton(icon: const Icon(Icons.refresh), onPressed: _reset),
+=======
+      appBar: AppBar(
+        title: const Text('Counter App'),
+        actions: [
+          // TODO: add a refresh button with Icon(Icons.refresh)
+        ],
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              '$_counter',
+              style: const TextStyle(fontSize: 48),
+            ),
+            const SizedBox(height: 32),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                // TODO: add a decrement button with Icon(Icons.remove) and onPressed: _decrementCounter
+                
+                const SizedBox(width: 32),
+                // TODO: add a increment button with Icon(Icons.add) and onPressed: _incrementCounter
+                
+>>>>>>> e6d76f7 (update lab1 and workflow of submission)
               ],
             ),
           ],

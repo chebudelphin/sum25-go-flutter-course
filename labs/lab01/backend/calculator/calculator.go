@@ -2,37 +2,41 @@ package calculator
 
 import (
 	"errors"
-	"strconv"
 )
 
 var ErrDivisionByZero = errors.New("division by zero")
 var ErrInvalidNumber = errors.New("invalid number format")
 
+// Add adds two float64 numbers
 func Add(a, b float64) float64 {
-	return a + b
+	// TODO: Implement this function
+	return 0
 }
+
+// Subtract subtracts b from a
 func Subtract(a, b float64) float64 {
-	return a - b
+	// TODO: Implement this function
+	return 0
 }
+
+// Multiply multiplies two float64 numbers
 func Multiply(a, b float64) float64 {
-	return a * b
+	// TODO: Implement this function
+	return 0
 }
+
+// Divide divides a by b, returns an error if b is zero
 func Divide(a, b float64) (float64, error) {
-	if b == 0 {
-		return 0, ErrDivisionByZero
-	}
-	return a / b, nil
+	// TODO: Implement this function
+	return 0, nil
 }
 func StringToFloat(s string) (float64, error) {
-	if s == "" {
-		return 0, ErrInvalidNumber
-	}
-	val, err := strconv.ParseFloat(s, 64)
-	if err != nil {
-		return 0, ErrInvalidNumber
-	}
-	return val, nil
+	// TODO: Implement this function
+	return 0, nil
 }
+
+// FloatToString converts a float64 to string with specified precision
 func FloatToString(f float64, precision int) string {
-	return strconv.FormatFloat(f, 'f', precision, 64)
+	// TODO: Implement this function
+	return ""
 }
