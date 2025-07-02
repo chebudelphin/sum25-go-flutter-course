@@ -17,7 +17,6 @@ class _CounterAppState extends State<CounterApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-<<<<<<< HEAD
       appBar: AppBar(title: const Text('Counter')),
       body: Center(
         child: Column(
@@ -31,14 +30,6 @@ class _CounterAppState extends State<CounterApp> {
                 IconButton(icon: const Icon(Icons.remove),  onPressed: _decrement),
                 IconButton(icon: const Icon(Icons.add),     onPressed: _increment),
                 IconButton(icon: const Icon(Icons.refresh), onPressed: _reset),
-=======
-      appBar: AppBar(
-        title: const Text('Counter App'),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.refresh),
-            onPressed: _resetCounter,
-          )
         ],
       ),
       body: Center(
@@ -61,6 +52,7 @@ class _CounterAppState extends State<CounterApp> {
                   onPressed: _incrementCounter,
                   child: const Icon(Icons.add),
                 ),
+
               ],
             ),
           ],

@@ -5,14 +5,11 @@ import (
 	"time"
 )
 
+// Predefined errors
 var (
 	ErrTaskNotFound = errors.New("task not found")
-<<<<<<< HEAD
 	ErrEmptyTitle   = errors.New("task title cannot be empty")
 	ErrInvalidID    = errors.New("invalid task ID")
-=======
-	ErrEmptyTitle   = errors.New("title cannot be empty")
->>>>>>> e6d76f7 (update lab1 and workflow of submission)
 )
 
 type Task struct {

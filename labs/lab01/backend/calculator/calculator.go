@@ -6,7 +6,6 @@ import (
 )
 
 var ErrDivisionByZero = errors.New("division by zero")
-
 func Add(a, b float64) float64      { return a + b }
 func Subtract(a, b float64) float64 { return a - b }
 func Multiply(a, b float64) float64 { return a * b }
@@ -24,4 +23,3 @@ func StringToFloat(s string) (float64, error) {
 
 func FloatToString(f float64, precision int) string {
 	return strconv.FormatFloat(f, 'f', precision, 64)
-}

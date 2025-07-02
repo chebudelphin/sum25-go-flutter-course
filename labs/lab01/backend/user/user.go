@@ -7,16 +7,11 @@ import (
 	"strings"
 )
 
+// Predefined errors
 var (
-<<<<<<< HEAD
 	ErrInvalidEmail = errors.New("invalid email format")
 	ErrInvalidAge   = errors.New("invalid age: must be between 0 and 150")
 	ErrEmptyName    = errors.New("name cannot be empty")
-=======
-	ErrInvalidName  = errors.New("invalid name: must be between 1 and 30 characters")
-	ErrInvalidAge   = errors.New("invalid age: must be between 0 and 150")
-	ErrInvalidEmail = errors.New("invalid email format")
->>>>>>> e6d76f7 (update lab1 and workflow of submission)
 )
 
 type User struct {
@@ -24,8 +19,6 @@ type User struct {
 	Age   int
 	Email string
 }
-
-/* ---------- Валидация ---------- */
 
 func IsValidName(name string) bool {
 	name = strings.TrimSpace(name)
@@ -39,8 +32,6 @@ func IsValidAge(age int) bool {
 var emailRE = regexp.MustCompile(`^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$`)
 
 func IsValidEmail(email string) bool { return emailRE.MatchString(email) }
-
-/* ---------- Методы ---------- */
 
 func (u *User) Validate() error {
 	switch {
@@ -59,7 +50,6 @@ func (u *User) String() string {
 	return fmt.Sprintf("Name: %s, Age: %d, Email: %s", u.Name, u.Age, u.Email)
 }
 
-/* ---------- Фабрика ---------- */
 
 func NewUser(name string, age int, email string) (*User, error) {
 	u := &User{Name: name, Age: age, Email: email}
@@ -67,4 +57,10 @@ func NewUser(name string, age int, email string) (*User, error) {
 		return nil, err
 	}
 	return u, nil
+}
+
+// IsValidAge checks if the age is valid, returns false if the age is not between 0 and 150
+func IsValidAge(age int) bool {
+	// TODO: Implement this function
+	return false
 }
