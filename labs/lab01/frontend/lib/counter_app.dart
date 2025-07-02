@@ -10,23 +10,9 @@ class CounterApp extends StatefulWidget {
 class _CounterAppState extends State<CounterApp> {
   int _counter = 0;
 
-<<<<<<< HEAD
-  void _increment() => setState(() => _counter++);
-  void _decrement() => setState(() => _counter--);
-  void _reset()     => setState(() => _counter = 0);
-=======
-  void _incrementCounter() {
-    // TODO: Implement this function
-  }
-
-  void _decrementCounter() {
-    // TODO: Implement this function
-  }
-
-  void _resetCounter() {
-    // TODO: Implement this function
-  }
->>>>>>> e6d76f7 (update lab1 and workflow of submission)
+  void _incrementCounter() => setState(() => _counter++);
+  void _decrementCounter() => setState(() => _counter--);
+  void _resetCounter() => setState(() => _counter = 0);
 
   @override
   Widget build(BuildContext context) {
@@ -49,27 +35,32 @@ class _CounterAppState extends State<CounterApp> {
       appBar: AppBar(
         title: const Text('Counter App'),
         actions: [
-          // TODO: add a refresh button with Icon(Icons.refresh)
+          IconButton(
+            icon: const Icon(Icons.refresh),
+            onPressed: _resetCounter,
+          )
         ],
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              '$_counter',
-              style: const TextStyle(fontSize: 48),
-            ),
+            Text('$_counter', style: const TextStyle(fontSize: 48)),
             const SizedBox(height: 32),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                // TODO: add a decrement button with Icon(Icons.remove) and onPressed: _decrementCounter
-                
+                FloatingActionButton(
+                  heroTag: 'dec',
+                  onPressed: _decrementCounter,
+                  child: const Icon(Icons.remove),
+                ),
                 const SizedBox(width: 32),
-                // TODO: add a increment button with Icon(Icons.add) and onPressed: _incrementCounter
-                
->>>>>>> e6d76f7 (update lab1 and workflow of submission)
+                FloatingActionButton(
+                  heroTag: 'inc',
+                  onPressed: _incrementCounter,
+                  child: const Icon(Icons.add),
+                ),
               ],
             ),
           ],
